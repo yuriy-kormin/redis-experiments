@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+    redis:
+        image: redis:latest
+        expose:
+            - 6379
+    python_app:
+        build: .
+#        ports:
+#            - 8000:80
+        depends_on:
+            - redis
